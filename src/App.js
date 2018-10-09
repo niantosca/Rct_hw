@@ -1,8 +1,43 @@
 import React, { Component } from 'react';
 import './App.css';
-import Gameframe from "./components/gameframe/gameframe.js"
+import { Card, CardTitle } from 'react-materialize';
+var shuffle = require('shuffle-array');
+
 
 class App extends Component {
+  
+  state = {
+    images: [
+      "./images/Eric-cartman.png",
+      "./images/Butters.png",
+      "./images/Jimmy_Vulmer.jpg",
+      "./images/Mr_Garrison.jpg",
+      "./images/Tweek.png",
+      "./images/Timmy.png",
+      "./images/Randy.png",
+      "./images/Kenny.jpg",
+      "./images/Mr_Mackey.png",
+      "./images/stan_marsh.png",
+      "./images/Kyle-broflovski.png",
+      "./images/sheila_broflovski.jpg"
+    ],
+    clicked: [],
+    score: 0,
+    highScore: 0,
+    correct: undefined,
+    gameWon: false
+
+  };
+
+
+
+
+  
+
+  
+ 
+
+  
   render() {
     return (
       <div className="App">
@@ -20,26 +55,15 @@ class App extends Component {
         </header>
           <div className="container">
             <div className="row">
-                <Gameframe icon="./images/Eric-cartman.png"></Gameframe>
-                <Gameframe icon="./images/Butters.png"></Gameframe>
-                <Gameframe icon="./images/Jimmy_Vulmer.jpg"></Gameframe>
-                <Gameframe icon="./images/Mr_Garrison.jpg"></Gameframe>
+              {this.state.images.map((img) => {return <div className="col-3" id="comp"><Card onClick={() => shuffle(this.state.images)}><CardTitle image={img}/></Card></div>})}
             </div>
-            <div className="row">
-                <Gameframe icon="./images/Tweek.png"></Gameframe>
-                <Gameframe icon="./images/Timmy.png"></Gameframe>
-                <Gameframe icon="./images/Randy.png"></Gameframe>
-                <Gameframe icon="./images/Kenny.jpg"></Gameframe>
-            </div>
-            <div className="row">
-                <Gameframe icon="./images/Mr_Mackey.png"></Gameframe>
-                <Gameframe icon="./images/stan_marsh.png"></Gameframe>
-                <Gameframe icon="./images/Kyle-broflovski.png"></Gameframe>
-                <Gameframe icon="./images/sheila_broflovski.jpg"></Gameframe>
-            </div>
+            
           </div>
-        
       </div>
+// onClick={() => props.clickHandler(props.image.imageName)}
+
+        
+      
     );
   }
 }

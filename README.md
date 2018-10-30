@@ -1,3 +1,8 @@
+This was an application I built in order to practice and familiarize myself with basic React.js concepts. In the near future, I plan to return to this project and create a functional game from this base of code.
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
